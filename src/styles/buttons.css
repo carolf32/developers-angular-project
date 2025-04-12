@@ -1,0 +1,46 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+
+  border-radius: 255px;
+
+  border: 1px solid;
+
+  transition: 0.4s;
+}
+
+.btn.md {
+  padding: 0 32px;
+  height: 3.1875rem;
+}
+
+.btn.sm {
+  padding: 0 24px;
+  height: 2.875rem;
+}
+
+.btn.solid {
+  background-color: var(--color-secondary);
+  color: var(--color-black);
+  border-color: var(--color-secondary);
+}
+
+.btn.solid.hover {
+  filter: brightness(0.9);
+}
+
+.btn.outline {
+  color: var(--color-black);
+}
+
+.btn.outline.hover {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}

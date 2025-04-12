@@ -1,0 +1,13 @@
+.dev-card {
+  width: 100%;
+  max-width: 262px;
+}
+
+.dev-card h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.dev-card h4 {
+  margin-bottom: 10px;
+}
