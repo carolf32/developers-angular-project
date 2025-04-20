@@ -31,7 +31,7 @@
   border-color: var(--color-secondary);
 }
 
-.btn.solid.hover {
+.btn.solid:hover {
   filter: brightness(0.9);
 }
 
@@ -39,7 +39,7 @@
   color: var(--color-black);
 }
 
-.btn.outline.hover {
+.btn.outline:hover {
   background-color: var(--color-black);
   border-color: var(--color-black);
   color: var(--color-white);

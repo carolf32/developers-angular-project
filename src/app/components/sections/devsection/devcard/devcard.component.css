@@ -11,3 +11,21 @@
 .dev-card h4 {
   margin-bottom: 10px;
 }
+.absolute-container {
+  position: relative;
+}
+
+.see-more-button {
+  position: absolute;
+  top: 5px;
+  left: 30%;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  opacity: 0;
+}
+
+.dev-card:hover .see-more-button {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}

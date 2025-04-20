@@ -1,15 +1,10 @@
 import { Component, Input } from '@angular/core';
-
-interface IDev {
-  name: string;
-  description: string;
-  imageUrl: string;
-  role: string;
-}
+import { RouterLink } from '@angular/router';
+import { IDev } from '../../../../../interfaces/dev.interface';
 
 @Component({
   selector: 'app-devcard',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './devcard.component.html',
   styleUrl: './devcard.component.css',
 })

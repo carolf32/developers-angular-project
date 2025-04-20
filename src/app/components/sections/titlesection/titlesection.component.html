@@ -1,5 +1,11 @@
 <section class="section black title-section">
-  <div class="container">
+  <div class="container flex-box">
     <h2 class="title one white">{{ title }}</h2>
+    <span class="title two white" *ngIf="devIdNumber === 1"> Jane Smith</span>
+    <span class="title two white" *ngIf="devIdNumber === 2"> John Doe</span>
+    <span class="title two white" *ngIf="devIdNumber === 3">
+      Alice Johnson</span
+    >
+    <span class="title two white" *ngIf="devIdNumber === 4"> Bob Brown</span>
   </div>
 </section>

@@ -1,5 +1,10 @@
 <li class="dev-card">
-  <img [src]="dev.imageUrl" [alt]="dev.name" />
+  <div class="absolute-container">
+    <img [src]="dev.imageUrl" [alt]="dev.name" />
+    <a class="btn sm solid see-more-button" [routerLink]="['/devs', dev.id]"
+      >See more</a
+    >
+  </div>
   <h3 class="title three">{{ dev.name }}</h3>
   <h4 class="title four">{{ dev.role }}</h4>
   <p class="paragraph small">{{ dev.description }}</p>

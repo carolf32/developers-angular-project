@@ -1,0 +1,34 @@
+<main>
+  <app-titlesection
+    [title]="title"
+    [devIdNumber]="devIdNumber"
+  ></app-titlesection>
+
+  <div *ngIf="commentService.isLoading()">
+    <p class="paragraph">Loading comments...</p>
+  </div>
+  <div *ngIf="allComments().length === 0">
+    <p class="paragraph">There's no comments on this dev yet</p>
+  </div>
+
+  <div *ngIf="!commentService.isLoading()">
+    <div *ngIf="allComments().length > 0">
+      <ul class="dev-list">
+        <app-comment-card
+          *ngFor="let comment of allComments()"
+          [comment]="comment"
+        ></app-comment-card>
+      </ul>
+    </div>
+  </div>
+
+  <div class="central" *ngIf="!user">
+    <button class="btn outline md" routerLink="/enter">
+      Enter or register to comment
+    </button>
+  </div>
+
+  <div *ngIf="user as currentUser">
+    <app-comment-form [devId]="devIdNumber"></app-comment-form>
+  </div>
+</main>

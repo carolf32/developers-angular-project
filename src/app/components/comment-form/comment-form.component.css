@@ -1,0 +1,15 @@
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  width: 50%;
+  height: 6rem;
+  background-color: var(--color-tertiary);
+  border-radius: 225px;
+  padding: 25px;
+  margin: 10px;
+}

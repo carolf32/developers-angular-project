@@ -1,0 +1,53 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <input
+    id="registerFormName"
+    type="text"
+    placeholder="Enter your name"
+    required
+    formControlName="name"
+  />
+  <div
+    *ngIf="registerForm.get('name')?.errors?.['required'] && registerForm.get('name')?.touched"
+  >
+    Name is required
+  </div>
+
+  <input
+    id="registerFormEmail"
+    type="email"
+    placeholder="Enter your email"
+    required
+    formControlName="email"
+  />
+  <div
+    *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched"
+  >
+    Email is required
+  </div>
+  <div
+    *ngIf="registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched"
+  >
+    Invalid email format
+  </div>
+
+  <input
+    id="registerFormPassword"
+    type="password"
+    placeholder="Enter your password"
+    required
+    formControlName="password"
+  />
+  <div
+    *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched"
+  >
+    Password is required
+  </div>
+
+  <button
+    class="btn outline sm"
+    type="submit"
+    [disabled]="registerForm.invalid"
+  >
+    Register
+  </button>
+</form>

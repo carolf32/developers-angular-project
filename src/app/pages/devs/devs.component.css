@@ -1,0 +1,18 @@
+.dev-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 30px;
+}
+
+.central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  padding: 10px;
+}

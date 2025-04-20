@@ -11,6 +11,7 @@ import { DevcardComponent } from './devcard/devcard.component';
 export class DevsectionComponent {
   developerList = [
     {
+      id: 1,
       name: 'Jane Smith',
       role: 'Backend Developer',
       imageUrl: 'dev1.jpg',
@@ -18,6 +19,7 @@ export class DevsectionComponent {
         'Jane is an experienced backend developer who specializes in building robust server-side applications.',
     },
     {
+      id: 2,
       name: 'John Doe',
       role: 'Frontend Developer',
       imageUrl: 'dev2.jpg',
@@ -25,6 +27,7 @@ export class DevsectionComponent {
         'John is a skilled frontend developer with a passion for creating beautiful and functional user interfaces.',
     },
     {
+      id: 3,
       name: 'Alice Johnson',
       role: 'Full Stack Developer',
       imageUrl: 'dev3.jpg',
@@ -32,6 +35,7 @@ export class DevsectionComponent {
         'Alice is a versatile full stack developer with expertise in both frontend and backend technologies.',
     },
     {
+      id: 4,
       name: 'Bob Brown',
       role: 'UI/UX Designer',
       imageUrl: 'dev4.jpg',

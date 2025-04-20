@@ -9,6 +9,14 @@
 .flex-box img {
   max-width: 9.375rem;
 }
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  margin: 0 0.5rem;
+}
 
 @media (min-width: 700px) {
   .flex-box {

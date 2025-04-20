@@ -1,0 +1,19 @@
+<form [formGroup]="commentForm" (ngSubmit)="submit()">
+  <div class="flex-box">
+    <label class="paragraph" for="content">Tell your opinion on this dev</label>
+    <textarea
+      id="content"
+      placeholder="Enter your comment"
+      required
+      formControlName="content"
+    ></textarea>
+
+    <button
+      class="btn outline md"
+      type="submit"
+      [disabled]="commentForm.invalid"
+    >
+      Comment
+    </button>
+  </div>
+</form>
