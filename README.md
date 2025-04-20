@@ -7,3 +7,5 @@ I used an API made by myself that can be found <a href="https://github.com/carol
 ## Features
 - [x] signup, login and logout (or enter as a guest)
 - [x] add or delete a comment in a dev page
+
+![Captura de tela 2025-04-20 204601](https://github.com/user-attachments/assets/80da48dc-096e-460f-b014-4a97cff19233)
