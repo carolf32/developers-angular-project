@@ -4,7 +4,7 @@ import {
   isMainModule,
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,14 +14,22 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-const DEV_IDS = ['1', '2', '3', '4'];
+app.get('/devs/1', handler);
+app.get('/devs/2', handler);
+app.get('/devs/3', handler);
+app.get('/devs/4', handler);
 
-export function getPrerenderParams() {
-  return {
-    '/devs/:devId': {
-      devId: DEV_IDS, // Passa a lista de IDs para pré-renderizar
-    },
-  };
+function handler(req: Request, res: Response, next: NextFunction) {
+  angularApp
+    .handle(req)
+    .then((response) => {
+      if (response) {
+        writeResponseToNodeResponse(response, res);
+      } else {
+        next();
+      }
+    })
+    .catch(next);
 }
 
 /**
@@ -47,15 +55,7 @@ app.use(
   })
 );
 
-app.get('/devs/:devId', (req, res, next) => {
-  angularApp
-    .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next()
-    )
-    .catch(next);
-});
-
+app.use('*', handler);
 /**
  * Handle all other requests by rendering the Angular application.
  */
