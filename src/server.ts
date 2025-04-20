@@ -14,6 +14,16 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+const DEV_IDS = ['1', '2', '3', '4'];
+
+export function getPrerenderParams() {
+  return {
+    '/devs/:devId': {
+      devId: DEV_IDS, // Passa a lista de IDs para pré-renderizar
+    },
+  };
+}
+
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -34,8 +44,17 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
-  }),
+  })
 );
+
+app.get('/devs/:devId', (req, res, next) => {
+  angularApp
+    .handle(req)
+    .then((response) =>
+      response ? writeResponseToNodeResponse(response, res) : next()
+    )
+    .catch(next);
+});
 
 /**
  * Handle all other requests by rendering the Angular application.
@@ -44,7 +63,7 @@ app.use('/**', (req, res, next) => {
   angularApp
     .handle(req)
     .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
+      response ? writeResponseToNodeResponse(response, res) : next()
     )
     .catch(next);
 });
@@ -63,4 +82,5 @@ if (isMainModule(import.meta.url)) {
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
+
 export const reqHandler = createNodeRequestHandler(app);

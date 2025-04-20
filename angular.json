@@ -13,6 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "prerender": true,
+            "routes": ["/", "/devs/1", "/devs/2", "/devs/3", "/devs/4"],
             "outputPath": "dist/developers-angular-project",
             "index": "src/index.html",
             "browser": "src/main.ts",

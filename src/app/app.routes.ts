@@ -3,7 +3,6 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { RegisterAndLoginPageComponent } from './pages/register-and-login-page/register-and-login-page.component';
 import { DevsComponent } from './pages/devs/devs.component';
-import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -13,7 +12,7 @@ export const routes: Routes = [
     path: 'devs/:devId',
     component: DevsComponent,
     data: {
-      RenderMode: 'default',
+      renderMode: 'ssr',
     },
   },
 ];

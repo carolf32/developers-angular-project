@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng buil --configuration=production && ng run developers-angular-project:server:production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "postbuild": "cp -r dist/developers-angular-project/browser/. dist/developers-angular-project/server/browser/",
     "serve:ssr:developers-angular-project": "node dist/developers-angular-project/server/server.mjs"
   },
   "private": true,
