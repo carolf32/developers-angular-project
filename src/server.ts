@@ -82,5 +82,13 @@ if (isMainModule(import.meta.url)) {
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
+export function getPrerenderParams() {
+  return [
+    { route: '/devs/1' },
+    { route: '/devs/2' },
+    { route: '/devs/3' },
+    { route: '/devs/4' },
+  ];
+}
 
 export const reqHandler = createNodeRequestHandler(app);
